@@ -295,9 +295,10 @@ img {
 }
 
 .social-links-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
+  justify-content: center;
   padding-top: 1.25rem;
   border-top: 1px solid var(--border-color);
 }
@@ -306,6 +307,7 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 44px;
   height: 38px;
   border-radius: var(--radius-sm);
   background: var(--bg-muted);
