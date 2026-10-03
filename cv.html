@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Curriculum Vitae - Shubail Haque Turzo</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap');
+
+    @page {
+      size: A4;
+      margin: 18mm 16mm 18mm 16mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #1a202c;
+      line-height: 1.45;
+      font-size: 9.5pt;
+      background: #ffffff;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    a {
+      color: #1d4ed8;
+      text-decoration: none;
+    }
+
+    /* Header */
+    .header {
+      border-bottom: 2px solid #2563eb;
+      padding-bottom: 10px;
+      margin-bottom: 12px;
+    }
+
+    .name {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 20pt;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+      margin-bottom: 3px;
+    }
+
+    .subtitle {
+      font-size: 10pt;
+      color: #2563eb;
+      font-weight: 600;
+      margin-bottom: 7px;
+    }
+
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px 14px;
+      font-size: 8.5pt;
+      color: #475569;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .contact-item b {
+      color: #1e293b;
+    }
+
+    /* Section */
+    .section {
+      margin-bottom: 12px;
+    }
+
+    .page-break {
+      page-break-before: always;
+      break-before: page;
+    }
+
+    .section-title {
+      font-size: 10.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #0f172a;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 3px;
+      margin-bottom: 8px;
+    }
+
+    /* Entry */
+    .entry {
+      margin-bottom: 8px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .entry-title {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .entry-subtitle {
+      font-size: 9pt;
+      font-weight: 500;
+      color: #334155;
+    }
+
+    .entry-date {
+      font-size: 8.5pt;
+      color: #64748b;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .entry-location {
+      font-size: 8.5pt;
+      color: #64748b;
+      font-style: italic;
+    }
+
+    ul.bullet-list {
+      margin-left: 15px;
+      margin-top: 3px;
+      font-size: 9pt;
+      color: #334155;
+    }
+
+    ul.bullet-list li {
+      margin-bottom: 3px;
+    }
+
+    /* Skills Table */
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9pt;
+    }
+
+    .skills-table td {
+      padding: 2.5px 0;
+      vertical-align: top;
+    }
+
+    .skills-table td.skill-label {
+      width: 22%;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .skills-table td.skill-val {
+      color: #334155;
+    }
+
+    /* Publications */
+    .pub-item {
+      margin-bottom: 6px;
+      font-size: 9pt;
+      color: #334155;
+      line-height: 1.4;
+    }
+
+    .pub-title {
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .pub-venue {
+      font-style: italic;
+      color: #1e293b;
+    }
+
+    /* Reference Grid */
+    .ref-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .ref-box {
+      font-size: 8.5pt;
+      line-height: 1.4;
+      color: #334155;
+      padding: 6px 8px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+    }
+
+    .ref-name {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .ref-role {
+      color: #2563eb;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <h1 class="name">SHUBAIL HAQUE TURZO</h1>
+    <div class="subtitle">B.Sc. in Information & Communication Engineering · Researcher & Competitive Programmer</div>
+    
+    <div class="contact-grid">
+      <div class="contact-item"><b>Phone:</b> +880 1521-388595</div>
+      <div class="contact-item"><b>Email:</b> <a href="mailto:shubailhaqueturzo@gmail.com">shubailhaqueturzo@gmail.com</a></div>
+      <div class="contact-item"><b>Alt Email:</b> <a href="mailto:turzo.pust.ice06@gmail.com">turzo.pust.ice06@gmail.com</a></div>
+      <div class="contact-item"><b>Location:</b> Pabna, Bangladesh</div>
+      <div class="contact-item"><b>Portfolio:</b> <a href="https://turzo06.github.io/">turzo06.github.io</a></div>
+      <div class="contact-item"><b>LinkedIn:</b> <a href="https://bd.linkedin.com/in/turzo06">in/turzo06</a></div>
+      <div class="contact-item"><b>GitHub:</b> <a href="https://github.com/turzo06">github.com/turzo06</a></div>
+      <div class="contact-item"><b>Google Scholar:</b> <a href="https://scholar.google.com/citations?user=ymrPZNgAAAAJ&hl=en">Citations Profile</a></div>
+      <div class="contact-item"><b>ORCID:</b> <a href="https://orcid.org/0009-0000-7145-9378">0009-0000-7145-9378</a></div>
+      <div class="contact-item"><b>Semantic Scholar:</b> <a href="https://www.semanticscholar.org/author/Shubail-Haque-Turza/2433143320">Author Profile</a></div>
+    </div>
+  </header>
+
+  <!-- Research Interests -->
+  <section class="section">
+    <h2 class="section-title">Research Interests</h2>
+    <div style="font-size: 9pt; color: #334155; line-height: 1.45;">
+      Multimodal Deep Learning, Computer Vision (Medical Image Analysis, Fine-Grained Object Recognition, Hybrid CNN–Transformer Architectures), Physiological Signal Processing (EEG, Facial, Speech Analytics), Natural Language Processing.
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="section">
+    <h2 class="section-title">Education</h2>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <span class="entry-title">Bachelor of Science in Engineering (B.Sc. Engg.) in ICE</span> — 
+          <span class="entry-subtitle">Pabna University of Science and Technology (PUST)</span>
+        </div>
+        <span class="entry-date">May 2022 – Sep 2026</span>
+      </div>
+      <div class="entry-header">
+        <span class="entry-subtitle">CGPA: <b>3.83 / 4.00</b> · Department of Information & Communication Engineering</span>
+        <span class="entry-location">Pabna, Bangladesh</span>
+      </div>
+      <ul class="bullet-list">
+        <li>Completed 4-year degree (Session: 2020–2021, Student ID: 210606) with honors distinction.</li>
+        <li>Key Coursework: Deep Learning, Computer Vision, Digital Signal Processing, Algorithms, Data Structures, Database Systems.</li>
+      </ul>
+    </div>
+
+    <div class="entry" style="margin-top: 5px;">
+      <div class="entry-header">
+        <div>
+          <span class="entry-title">Higher Secondary Certificate (H.S.C.)</span> — 
+          <span class="entry-subtitle">Saidpur Govt. Science College</span>
+        </div>
+        <span class="entry-date">2020</span>
+      </div>
+      <div class="entry-subtitle">Science Group</div>
+    </div>
+
+    <div class="entry" style="margin-top: 4px;">
+      <div class="entry-header">
+        <div>
+          <span class="entry-title">Secondary School Certificate (S.S.C.)</span> — 
+          <span class="entry-subtitle">Kishoreganj Multilateral High School</span>
+        </div>
+        <span class="entry-date">2018</span>
+      </div>
+      <div class="entry-subtitle">Science Group</div>
+    </div>
+  </section>
+
+  <!-- Research Experience -->
+  <section class="section">
+    <h2 class="section-title">Research Experience</h2>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <span class="entry-title">Research Assistant</span> — 
+          <span class="entry-subtitle">Dept. of Information & Communication Engineering, PUST</span>
+        </div>
+        <span class="entry-date">Nov 2025 – Jul 2026</span>
+      </div>
+      <div class="entry-subtitle" style="color: #1e293b; font-weight: 600;">
+        Project: <em>"Development of a Real-Time Multimodal Deep Learning Framework Combining EEG, Facial, and Speech Features for Detection of Stress, Depression, and Anxiety in University Students"</em>
+      </div>
+      <div style="font-size: 8.5pt; color: #475569; margin-top: 2px;">
+        Supervisor: <b>Dr. Md. Sarwar Hosain</b> (Professor, Dept. of ICE, PUST)
+      </div>
+      <ul class="bullet-list">
+        <li>Engineered multimodal preprocessing pipelines synchronizing electroencephalography (EEG) signals, facial expressions, and acoustic speech data.</li>
+        <li>Implemented cross-attention fusion networks to capture complementary physiological and behavioral markers for mental health assessment.</li>
+        <li>Formally awarded the Certificate of Research Assistantship (Issued 06/08/2026).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section class="section">
+    <h2 class="section-title">Publications</h2>
+
+    <div class="pub-item">
+      [1] <b>Shubail Haque Turza</b>, et al., "A Hybrid YOLO-EfficientNet Framework for Fine-Grained Vegetable Recognition in Dense Multi-Object Images," in <em>2026 IEEE 2nd International Conference on Quantum Photonics, Artificial Intelligence & Networking (QPAIN)</em>, 2026.
+    </div>
+
+    <div class="pub-item">
+      [2] <b>Shubail Haque Turza</b>, et al., "ResNeXt50-Guided Hybrid CNN–Transformer Framework for Early Stroke Abnormality Detection: A Comparative Deep Learning Study," in <em>2026 International Conference on Power, Electronics, Communications, Computing, and Intelligent Infrastructure (PECCII)</em>, 2026.
+    </div>
+
+    <div class="pub-item">
+      [3] <b>Shubail Haque Turza</b>, et al., "Fake News Detection in Bangla: A Transformer Ensemble Framework for Robust Classification," in <em>2025 28th International Conference on Computer and Information Technology (ICCIT)</em>, 2025 (IEEE).
+    </div>
+  </section>
+
+  <!-- Competitive Programming & Awards -->
+  <section class="section page-break">
+    <h2 class="section-title">Competitive Programming & Honors</h2>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">ICPC Asia Dhaka Regional Contest 2024</span>
+        <span class="entry-date">Dec 2024</span>
+      </div>
+      <div class="entry-subtitle">
+        Contestant, Team <b>PUST_Codo_Sapiens</b> · Hosted at Daffodil Smart City (Coach: Akif Mahdi Sir)
+      </div>
+      <div style="font-size: 8.5pt; color: #475569;">
+        Competed on site against Bangladesh's premier collegiate algorithmic programming teams.
+      </div>
+    </div>
+
+    <div class="entry" style="margin-top: 5px;">
+      <div class="entry-header">
+        <span class="entry-title">Intra-University Programming Contest (Solver Green IUPC) — 2nd Runner-Up</span>
+        <span class="entry-date">Jun 2023</span>
+      </div>
+      <div class="entry-subtitle">
+        Team <b>codosapiens</b> · Hosted by Solver Green in association with Edupy Academy
+      </div>
+      <div style="font-size: 8.5pt; color: #475569;">
+        Secured 3rd place university-wide, solving 3 complex algorithmic problems in 149 penalty minutes.
+      </div>
+    </div>
+
+    <div class="entry" style="margin-top: 5px;">
+      <div class="entry-header">
+        <span class="entry-title">Online Judge Profiles</span>
+        <span class="entry-date">Active</span>
+      </div>
+      <div style="font-size: 9pt; color: #334155;">
+        <b>CodeChef:</b> Rating 1476 (Division 3, 2-Star) · <a href="https://www.codechef.com/users/turzo06">codechef.com/users/turzo06</a><br>
+        <b>Codeforces:</b> Handle: <em>turzo06</em> · <a href="https://codeforces.com/profile/turzo06">codeforces.com/profile/turzo06</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="section">
+    <h2 class="section-title">Certifications</h2>
+    <div class="entry">
+      <div class="entry-header">
+        <div>
+          <span class="entry-title">SQL (Intermediate) Skill Certification</span> — 
+          <span class="entry-subtitle">HackerRank</span>
+        </div>
+        <span class="entry-date">Oct 12, 2024</span>
+      </div>
+      <div style="font-size: 8.5pt; color: #475569;">
+        Certificate ID: <b>7B31E881153C</b> · Verified: <a href="https://www.hackerrank.com/certificates/7b31e881153c">hackerrank.com/certificates/7b31e881153c</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills -->
+  <section class="section">
+    <h2 class="section-title">Technical Skills</h2>
+    <table class="skills-table">
+      <tr>
+        <td class="skill-label">Programming:</td>
+        <td class="skill-val">Python, C, C++, Java, JavaScript, PHP, SQL, MATLAB</td>
+      </tr>
+      <tr>
+        <td class="skill-label">AI / Deep Learning:</td>
+        <td class="skill-val">PyTorch, TensorFlow, OpenCV, Scikit-Learn, YOLO, Vision Transformers, Multimodal Fusion</td>
+      </tr>
+      <tr>
+        <td class="skill-label">Systems & Tools:</td>
+        <td class="skill-val">Jupyter Notebook, Kaggle, Visual Studio Code, SQL Server Management Studio (SSMS), Git, GitHub, LaTeX, Linux</td>
+      </tr>
+      <tr>
+        <td class="skill-label">Hardware & Simulation:</td>
+        <td class="skill-val">Proteus, mikroC, Cisco Packet Tracer</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- References -->
+  <section class="section">
+    <h2 class="section-title">References</h2>
+    <div class="ref-grid">
+      <div class="ref-box">
+        <div class="ref-name">Dr. Md. Sarwar Hosain</div>
+        <div class="ref-role">Professor & Research Supervisor</div>
+        <div>Department of Information and Communication Engineering</div>
+        <div>Pabna University of Science and Technology, Pabna, Bangladesh</div>
+        <div><b>Mobile:</b> +880 1722-047833</div>
+        <div><b>Email:</b> <a href="mailto:sarwar.ice@pust.ac.bd">sarwar.ice@pust.ac.bd</a></div>
+      </div>
+
+      <div class="ref-box">
+        <div class="ref-name">Dr. Md. Omar Faruk</div>
+        <div class="ref-role">Professor & Academic Referee</div>
+        <div>Department of Information and Communication Engineering</div>
+        <div>Pabna University of Science and Technology, Pabna, Bangladesh</div>
+        <div><b>Mobile:</b> +880 1712-415335</div>
+        <div><b>Email:</b> <a href="mailto:fom_06@pust.ac.bd">fom_06@pust.ac.bd</a></div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
