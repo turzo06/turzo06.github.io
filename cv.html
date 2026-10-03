@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Curriculum Vitae - Shubail Haque Turzo</title>
+  <title>Curriculum Vitae - Shubail Haque Turza</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap');
 
     @page {
       size: A4;
-      margin: 18mm 16mm 18mm 16mm;
+      margin: 14mm 16mm 14mm 16mm;
     }
 
     * {
@@ -19,7 +19,7 @@
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      color: #1a202c;
+      color: #1e293b;
       line-height: 1.45;
       font-size: 9.5pt;
       background: #ffffff;
@@ -32,50 +32,57 @@
       text-decoration: none;
     }
 
-    /* Header */
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Academic Header */
     .header {
-      border-bottom: 2px solid #2563eb;
-      padding-bottom: 10px;
+      text-align: center;
+      padding-bottom: 8px;
       margin-bottom: 12px;
+      border-bottom: 1.5px solid #0f172a;
     }
 
     .name {
       font-family: 'Merriweather', Georgia, serif;
-      font-size: 20pt;
+      font-size: 22pt;
       font-weight: 700;
       color: #0f172a;
-      letter-spacing: -0.5px;
-      margin-bottom: 3px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
     }
 
-    .subtitle {
-      font-size: 10pt;
-      color: #2563eb;
-      font-weight: 600;
-      margin-bottom: 7px;
+    .sub-affil {
+      font-size: 9.5pt;
+      color: #334155;
+      font-weight: 500;
+      margin-bottom: 6px;
     }
 
-    .contact-grid {
+    .contact-line {
       display: flex;
+      justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 5px 14px;
-      font-size: 8.5pt;
+      gap: 6px 10px;
+      font-size: 8.8pt;
       color: #475569;
     }
 
-    .contact-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
+    .contact-line .sep {
+      color: #94a3b8;
+      font-weight: 300;
     }
 
-    .contact-item b {
-      color: #1e293b;
+    .contact-line a {
+      color: #1d4ed8;
     }
 
-    /* Section */
+    /* Section Styling */
     .section {
-      margin-bottom: 12px;
+      margin-bottom: 11px;
     }
 
     .page-break {
@@ -89,12 +96,12 @@
       text-transform: uppercase;
       letter-spacing: 0.8px;
       color: #0f172a;
-      border-bottom: 1px solid #cbd5e1;
-      padding-bottom: 3px;
+      border-bottom: 1.2px solid #0f172a;
+      padding-bottom: 2px;
       margin-bottom: 8px;
     }
 
-    /* Entry */
+    /* Entries */
     .entry {
       margin-bottom: 8px;
       break-inside: avoid;
@@ -105,47 +112,70 @@
       margin-bottom: 0;
     }
 
-    .entry-header {
+    .entry-row {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 2px;
+      margin-bottom: 1.5px;
     }
 
-    .entry-title {
+    .entry-main {
       font-size: 9.5pt;
       font-weight: 700;
       color: #0f172a;
     }
 
-    .entry-subtitle {
+    .entry-org {
       font-size: 9pt;
       font-weight: 500;
       color: #334155;
+      font-style: italic;
     }
 
     .entry-date {
       font-size: 8.5pt;
-      color: #64748b;
+      color: #0f172a;
       font-weight: 600;
       white-space: nowrap;
     }
 
-    .entry-location {
+    .entry-loc {
       font-size: 8.5pt;
       color: #64748b;
       font-style: italic;
+      white-space: nowrap;
     }
 
     ul.bullet-list {
-      margin-left: 15px;
+      margin-left: 16px;
       margin-top: 3px;
       font-size: 9pt;
       color: #334155;
     }
 
     ul.bullet-list li {
-      margin-bottom: 3px;
+      margin-bottom: 2.5px;
+      line-height: 1.4;
+    }
+
+    /* Publications */
+    .pub-entry {
+      margin-bottom: 7px;
+      font-size: 9pt;
+      color: #334155;
+      line-height: 1.42;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .pub-title {
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .pub-venue {
+      font-style: italic;
+      color: #1e293b;
     }
 
     /* Skills Table */
@@ -156,7 +186,7 @@
     }
 
     .skills-table td {
-      padding: 2.5px 0;
+      padding: 3px 0;
       vertical-align: top;
     }
 
@@ -170,71 +200,64 @@
       color: #334155;
     }
 
-    /* Publications */
-    .pub-item {
-      margin-bottom: 6px;
-      font-size: 9pt;
-      color: #334155;
-      line-height: 1.4;
-    }
-
-    .pub-title {
-      font-weight: 600;
-      color: #0f172a;
-    }
-
-    .pub-venue {
-      font-style: italic;
-      color: #1e293b;
-    }
-
-    /* Reference Grid */
+    /* References */
     .ref-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 14px;
+      break-inside: avoid;
+      page-break-inside: avoid;
     }
 
-    .ref-box {
-      font-size: 8.5pt;
-      line-height: 1.4;
+    .ref-card {
+      font-size: 8.7pt;
+      line-height: 1.45;
       color: #334155;
-      padding: 6px 8px;
+      padding: 8px 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 3px;
       background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 4px;
     }
 
     .ref-name {
-      font-size: 9.5pt;
+      font-size: 9.8pt;
       font-weight: 700;
       color: #0f172a;
     }
 
     .ref-role {
-      color: #2563eb;
+      color: #1d4ed8;
       font-weight: 600;
+      margin-bottom: 2px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Top Academic Header -->
   <header class="header">
-    <h1 class="name">SHUBAIL HAQUE TURZO</h1>
-    <div class="subtitle">B.Sc. in Information & Communication Engineering · Researcher & Competitive Programmer</div>
+    <h1 class="name">SHUBAIL HAQUE TURZA</h1>
+    <div class="sub-affil">Department of Information & Communication Engineering · Pabna University of Science and Technology</div>
     
-    <div class="contact-grid">
-      <div class="contact-item"><b>Phone:</b> +880 1521-388595</div>
-      <div class="contact-item"><b>Email:</b> <a href="mailto:shubailhaqueturzo@gmail.com">shubailhaqueturzo@gmail.com</a></div>
-      <div class="contact-item"><b>Alt Email:</b> <a href="mailto:turzo.pust.ice06@gmail.com">turzo.pust.ice06@gmail.com</a></div>
-      <div class="contact-item"><b>Location:</b> Pabna, Bangladesh</div>
-      <div class="contact-item"><b>Portfolio:</b> <a href="https://turzo06.github.io/">turzo06.github.io</a></div>
-      <div class="contact-item"><b>LinkedIn:</b> <a href="https://bd.linkedin.com/in/turzo06">in/turzo06</a></div>
-      <div class="contact-item"><b>GitHub:</b> <a href="https://github.com/turzo06">github.com/turzo06</a></div>
-      <div class="contact-item"><b>Google Scholar:</b> <a href="https://scholar.google.com/citations?user=ymrPZNgAAAAJ&hl=en">Citations Profile</a></div>
-      <div class="contact-item"><b>ORCID:</b> <a href="https://orcid.org/0009-0000-7145-9378">0009-0000-7145-9378</a></div>
-      <div class="contact-item"><b>Semantic Scholar:</b> <a href="https://www.semanticscholar.org/author/Shubail-Haque-Turza/2433143320">Author Profile</a></div>
+    <div class="contact-line">
+      <span>Pabna, Bangladesh</span>
+      <span class="sep">•</span>
+      <span>+880 1521-388595</span>
+      <span class="sep">•</span>
+      <a href="mailto:shubailhaqueturzo@gmail.com">shubailhaqueturzo@gmail.com</a>
+      <span class="sep">•</span>
+      <a href="https://turzo06.github.io/">turzo06.github.io</a>
+    </div>
+    <div class="contact-line" style="margin-top: 3px;">
+      <a href="https://github.com/turzo06">GitHub: turzo06</a>
+      <span class="sep">•</span>
+      <a href="https://bd.linkedin.com/in/turzo06">LinkedIn: in/turzo06</a>
+      <span class="sep">•</span>
+      <a href="https://scholar.google.com/citations?user=ymrPZNgAAAAJ&hl=en">Google Scholar</a>
+      <span class="sep">•</span>
+      <a href="https://orcid.org/0009-0000-7145-9378">ORCID: 0009-0000-7145-9378</a>
+      <span class="sep">•</span>
+      <a href="https://www.semanticscholar.org/author/Shubail-Haque-Turza/2433143320">Semantic Scholar</a>
     </div>
   </header>
 
@@ -251,43 +274,47 @@
     <h2 class="section-title">Education</h2>
 
     <div class="entry">
-      <div class="entry-header">
+      <div class="entry-row">
         <div>
-          <span class="entry-title">Bachelor of Science in Engineering (B.Sc. Engg.) in ICE</span> — 
-          <span class="entry-subtitle">Pabna University of Science and Technology (PUST)</span>
+          <span class="entry-main">Bachelor of Science in Engineering (B.Sc. Engg.) in ICE</span>
         </div>
         <span class="entry-date">May 2022 – Sep 2026</span>
       </div>
-      <div class="entry-header">
-        <span class="entry-subtitle">CGPA: <b>3.83 / 4.00</b> · Department of Information & Communication Engineering</span>
-        <span class="entry-location">Pabna, Bangladesh</span>
+      <div class="entry-row">
+        <span class="entry-org">Pabna University of Science and Technology (PUST)</span>
+        <span class="entry-loc">Pabna, Bangladesh</span>
+      </div>
+      <div style="font-size: 9pt; color: #0f172a; margin-top: 1px;">
+        Cumulative GPA: <b>3.83 / 4.00</b> · Department of Information and Communication Engineering
       </div>
       <ul class="bullet-list">
-        <li>Completed 4-year degree (Session: 2020–2021, Student ID: 210606) with honors distinction.</li>
-        <li>Key Coursework: Deep Learning, Computer Vision, Digital Signal Processing, Algorithms, Data Structures, Database Systems.</li>
+        <li>4-year undergraduate degree (Session: 2020–2021, Student ID: 210606) completed with honors distinction.</li>
+        <li>Core Coursework: Deep Learning, Computer Vision, Digital Signal Processing, Algorithms, Data Structures, Database Management Systems.</li>
       </ul>
     </div>
 
-    <div class="entry" style="margin-top: 5px;">
-      <div class="entry-header">
-        <div>
-          <span class="entry-title">Higher Secondary Certificate (H.S.C.)</span> — 
-          <span class="entry-subtitle">Saidpur Govt. Science College</span>
-        </div>
+    <div class="entry" style="margin-top: 6px;">
+      <div class="entry-row">
+        <span class="entry-main">Higher Secondary Certificate (H.S.C.)</span>
         <span class="entry-date">2020</span>
       </div>
-      <div class="entry-subtitle">Science Group</div>
+      <div class="entry-row">
+        <span class="entry-org">Saidpur Govt. Science College</span>
+        <span class="entry-loc">Saidpur, Bangladesh</span>
+      </div>
+      <div style="font-size: 8.8pt; color: #475569;">Group: Science</div>
     </div>
 
-    <div class="entry" style="margin-top: 4px;">
-      <div class="entry-header">
-        <div>
-          <span class="entry-title">Secondary School Certificate (S.S.C.)</span> — 
-          <span class="entry-subtitle">Kishoreganj Multilateral High School</span>
-        </div>
+    <div class="entry" style="margin-top: 5px;">
+      <div class="entry-row">
+        <span class="entry-main">Secondary School Certificate (S.S.C.)</span>
         <span class="entry-date">2018</span>
       </div>
-      <div class="entry-subtitle">Science Group</div>
+      <div class="entry-row">
+        <span class="entry-org">Kishoreganj Multilateral High School</span>
+        <span class="entry-loc">Nilphamari, Bangladesh</span>
+      </div>
+      <div style="font-size: 8.8pt; color: #475569;">Group: Science</div>
     </div>
   </section>
 
@@ -296,17 +323,18 @@
     <h2 class="section-title">Research Experience</h2>
 
     <div class="entry">
-      <div class="entry-header">
-        <div>
-          <span class="entry-title">Research Assistant</span> — 
-          <span class="entry-subtitle">Dept. of Information & Communication Engineering, PUST</span>
-        </div>
+      <div class="entry-row">
+        <span class="entry-main">Research Assistant</span>
         <span class="entry-date">Nov 2025 – Jul 2026</span>
       </div>
-      <div class="entry-subtitle" style="color: #1e293b; font-weight: 600;">
+      <div class="entry-row">
+        <span class="entry-org">Department of Information and Communication Engineering, PUST</span>
+        <span class="entry-loc">Pabna, Bangladesh</span>
+      </div>
+      <div style="font-size: 9pt; color: #0f172a; font-weight: 600; margin-top: 2px;">
         Project: <em>"Development of a Real-Time Multimodal Deep Learning Framework Combining EEG, Facial, and Speech Features for Detection of Stress, Depression, and Anxiety in University Students"</em>
       </div>
-      <div style="font-size: 8.5pt; color: #475569; margin-top: 2px;">
+      <div style="font-size: 8.7pt; color: #475569; margin-top: 1px;">
         Supervisor: <b>Dr. Md. Sarwar Hosain</b> (Professor, Dept. of ICE, PUST)
       </div>
       <ul class="bullet-list">
@@ -321,58 +349,108 @@
   <section class="section">
     <h2 class="section-title">Publications</h2>
 
-    <div class="pub-item">
+    <div class="pub-entry">
       [1] <b>Shubail Haque Turza</b>, et al., "A Hybrid YOLO-EfficientNet Framework for Fine-Grained Vegetable Recognition in Dense Multi-Object Images," in <em>2026 IEEE 2nd International Conference on Quantum Photonics, Artificial Intelligence & Networking (QPAIN)</em>, 2026.
     </div>
 
-    <div class="pub-item">
+    <div class="pub-entry">
       [2] <b>Shubail Haque Turza</b>, et al., "ResNeXt50-Guided Hybrid CNN–Transformer Framework for Early Stroke Abnormality Detection: A Comparative Deep Learning Study," in <em>2026 International Conference on Power, Electronics, Communications, Computing, and Intelligent Infrastructure (PECCII)</em>, 2026.
     </div>
 
-    <div class="pub-item">
+    <div class="pub-entry">
       [3] <b>Shubail Haque Turza</b>, et al., "Fake News Detection in Bangla: A Transformer Ensemble Framework for Robust Classification," in <em>2025 28th International Conference on Computer and Information Technology (ICCIT)</em>, 2025 (IEEE).
     </div>
   </section>
 
-  <!-- Competitive Programming & Awards -->
+  <!-- Competitive Programming & Honors (Starts Cleanly on Page 2) -->
   <section class="section page-break">
     <h2 class="section-title">Competitive Programming & Honors</h2>
 
     <div class="entry">
-      <div class="entry-header">
-        <span class="entry-title">ICPC Asia Dhaka Regional Contest 2024</span>
+      <div class="entry-row">
+        <span class="entry-main">ICPC Asia Dhaka Regional Contest 2024</span>
         <span class="entry-date">Dec 2024</span>
       </div>
-      <div class="entry-subtitle">
-        Contestant, Team <b>PUST_Codo_Sapiens</b> · Hosted at Daffodil Smart City (Coach: Akif Mahdi Sir)
+      <div class="entry-row">
+        <span class="entry-org">Contestant, Team PUST_Codo_Sapiens · Hosted at Daffodil Smart City (DIU)</span>
+        <span class="entry-loc">Dhaka, Bangladesh</span>
       </div>
-      <div style="font-size: 8.5pt; color: #475569;">
-        Competed on site against Bangladesh's premier collegiate algorithmic programming teams.
-      </div>
+      <ul class="bullet-list">
+        <li>Coach: Akif Mahdi Sir | Team Members: Shubail Haque Turza, Parvez Ali, Asif Karim.</li>
+        <li>Competed on site against premier university algorithmic programming teams across Bangladesh.</li>
+      </ul>
     </div>
 
-    <div class="entry" style="margin-top: 5px;">
-      <div class="entry-header">
-        <span class="entry-title">Intra-University Programming Contest (Solver Green IUPC) — 2nd Runner-Up</span>
+    <div class="entry" style="margin-top: 6px;">
+      <div class="entry-row">
+        <span class="entry-main">Intra-University Programming Contest (Solver Green IUPC) — 2nd Runner-Up</span>
         <span class="entry-date">Jun 2023</span>
       </div>
-      <div class="entry-subtitle">
-        Team <b>codosapiens</b> · Hosted by Solver Green in association with Edupy Academy
+      <div class="entry-row">
+        <span class="entry-org">Team codosapiens · Hosted by Solver Green in association with Edupy Academy</span>
+        <span class="entry-loc">PUST, Bangladesh</span>
       </div>
-      <div style="font-size: 8.5pt; color: #475569;">
-        Secured 3rd place university-wide, solving 3 complex algorithmic problems in 149 penalty minutes.
-      </div>
+      <ul class="bullet-list">
+        <li>Secured 3rd place university-wide, solving 3 complex algorithmic problems in 149 penalty minutes.</li>
+      </ul>
     </div>
 
-    <div class="entry" style="margin-top: 5px;">
-      <div class="entry-header">
-        <span class="entry-title">Online Judge Profiles</span>
+    <div class="entry" style="margin-top: 6px;">
+      <div class="entry-row">
+        <span class="entry-main">Online Judge Profiles</span>
         <span class="entry-date">Active</span>
       </div>
-      <div style="font-size: 9pt; color: #334155;">
-        <b>CodeChef:</b> Rating 1476 (Division 3, 2-Star) · <a href="https://www.codechef.com/users/turzo06">codechef.com/users/turzo06</a><br>
-        <b>Codeforces:</b> Handle: <em>turzo06</em> · <a href="https://codeforces.com/profile/turzo06">codeforces.com/profile/turzo06</a>
+      <ul class="bullet-list">
+        <li><b>CodeChef:</b> Rating 1476 (Division 3, 2-Star) — <a href="https://www.codechef.com/users/turzo06">codechef.com/users/turzo06</a></li>
+        <li><b>Codeforces:</b> Handle: <em>turzo06</em> — <a href="https://codeforces.com/profile/turzo06">codeforces.com/profile/turzo06</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Selected Projects -->
+  <section class="section">
+    <h2 class="section-title">Selected Projects</h2>
+
+    <div class="entry">
+      <div class="entry-row">
+        <span class="entry-main">Hybrid YOLO-EfficientNet Object Recognition Framework</span>
+        <span class="entry-date">2025 – 2026</span>
       </div>
+      <div class="entry-row">
+        <span class="entry-org">PyTorch, OpenCV, YOLO, EfficientNet</span>
+      </div>
+      <ul class="bullet-list">
+        <li>Developed a two-stage computer vision framework coupling YOLO bounding-box proposals with EfficientNet deep representations for fine-grained multi-object recognition in dense scenes.</li>
+        <li>Published as first author in IEEE QPAIN 2026.</li>
+      </ul>
+    </div>
+
+    <div class="entry" style="margin-top: 6px;">
+      <div class="entry-row">
+        <span class="entry-main">ResNeXt50–Transformer Hybrid for Stroke Abnormality Detection</span>
+        <span class="entry-date">2025 – 2026</span>
+      </div>
+      <div class="entry-row">
+        <span class="entry-org">PyTorch, Scikit-Learn, Medical Imaging</span>
+      </div>
+      <ul class="bullet-list">
+        <li>Engineered a hybrid vision architecture fusing ResNeXt50 convolutional features with multi-head self-attention mechanisms to detect subtle acute stroke markers in clinical scans.</li>
+        <li>Presented at PECCII 2026.</li>
+      </ul>
+    </div>
+
+    <div class="entry" style="margin-top: 6px;">
+      <div class="entry-row">
+        <span class="entry-main">Bangla Transformer Ensemble for Misinformation Detection</span>
+        <span class="entry-date">2024 – 2025</span>
+      </div>
+      <div class="entry-row">
+        <span class="entry-org">HuggingFace, PyTorch, BanglaBERT</span>
+      </div>
+      <ul class="bullet-list">
+        <li>Constructed an ensemble classifier combining fine-tuned BanglaBERT and multilingual transformers for robust classification across low-resource Bangla linguistic corpora.</li>
+        <li>Published in 28th IEEE ICCIT 2025.</li>
+      </ul>
     </div>
   </section>
 
@@ -380,14 +458,13 @@
   <section class="section">
     <h2 class="section-title">Certifications</h2>
     <div class="entry">
-      <div class="entry-header">
+      <div class="entry-row">
         <div>
-          <span class="entry-title">SQL (Intermediate) Skill Certification</span> — 
-          <span class="entry-subtitle">HackerRank</span>
+          <span class="entry-main">SQL (Intermediate) Skill Certification</span> — <span class="entry-org">HackerRank</span>
         </div>
         <span class="entry-date">Oct 12, 2024</span>
       </div>
-      <div style="font-size: 8.5pt; color: #475569;">
+      <div style="font-size: 8.7pt; color: #475569; margin-top: 2px;">
         Certificate ID: <b>7B31E881153C</b> · Verified: <a href="https://www.hackerrank.com/certificates/7b31e881153c">hackerrank.com/certificates/7b31e881153c</a>
       </div>
     </div>
@@ -416,25 +493,25 @@
     </table>
   </section>
 
-  <!-- References -->
+  <!-- Academic References -->
   <section class="section">
-    <h2 class="section-title">References</h2>
+    <h2 class="section-title">Academic References</h2>
     <div class="ref-grid">
-      <div class="ref-box">
+      <div class="ref-card">
         <div class="ref-name">Dr. Md. Sarwar Hosain</div>
         <div class="ref-role">Professor & Research Supervisor</div>
         <div>Department of Information and Communication Engineering</div>
         <div>Pabna University of Science and Technology, Pabna, Bangladesh</div>
-        <div><b>Mobile:</b> +880 1722-047833</div>
+        <div style="margin-top: 4px;"><b>Mobile:</b> +880 1722-047833</div>
         <div><b>Email:</b> <a href="mailto:sarwar.ice@pust.ac.bd">sarwar.ice@pust.ac.bd</a></div>
       </div>
 
-      <div class="ref-box">
+      <div class="ref-card">
         <div class="ref-name">Dr. Md. Omar Faruk</div>
         <div class="ref-role">Professor & Academic Referee</div>
         <div>Department of Information and Communication Engineering</div>
         <div>Pabna University of Science and Technology, Pabna, Bangladesh</div>
-        <div><b>Mobile:</b> +880 1712-415335</div>
+        <div style="margin-top: 4px;"><b>Mobile:</b> +880 1712-415335</div>
         <div><b>Email:</b> <a href="mailto:fom_06@pust.ac.bd">fom_06@pust.ac.bd</a></div>
       </div>
     </div>
