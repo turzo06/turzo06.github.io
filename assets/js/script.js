@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const paperModal = document.getElementById('paper-detail-modal');
   const paperModalClose = document.getElementById('paper-modal-close');
 
-  function openPaperModal(paperId) {
+  function openPaperModal(paperId, focusSection) {
     if (!paperModal || !paperId) return;
     paperModal.querySelectorAll('.paper-modal-content-item').forEach(item => {
       item.style.display = 'none';
@@ -198,6 +198,18 @@ document.addEventListener('DOMContentLoaded', () => {
       targetContent.style.display = 'block';
       paperModal.classList.add('active');
       document.body.style.overflow = 'hidden';
+
+      if (focusSection === 'cite') {
+        setTimeout(() => {
+          const bibBlock = targetContent.querySelector('.bibtex-block');
+          if (bibBlock) {
+            bibBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            bibBlock.style.transition = 'box-shadow 0.3s ease';
+            bibBlock.style.boxShadow = '0 0 0 3px var(--accent)';
+            setTimeout(() => { bibBlock.style.boxShadow = ''; }, 1800);
+          }
+        }, 150);
+      }
     }
   }
 
@@ -214,7 +226,8 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         e.stopPropagation();
         const paperId = btn.getAttribute('data-paper');
-        openPaperModal(paperId);
+        const focusSection = btn.getAttribute('data-focus');
+        openPaperModal(paperId, focusSection);
       });
     });
 

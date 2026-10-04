@@ -331,12 +331,12 @@
               <button class="pub-btn primary btn-open-paper-modal" data-paper="qpain">
                 <i class="fa-solid fa-circle-info"></i> Inside Details
               </button>
-              <button class="pub-btn disabled-btn" disabled title="Paper PDF awaiting publication in IEEE Xplore proceedings">
-                <i class="fa-solid fa-file-pdf"></i> Paper PDF
-              </button>
-              <a href="https://www.semanticscholar.org/paper/2b2b85bc28b2c93aca8b05b226fd52b2bc4cd4d5" target="_blank" rel="noopener noreferrer" class="pub-btn">
-                <i class="ai ai-semantic-scholar"></i> Citation
+              <a href="https://doi.org/10.1109/QPAIN69676.2026.11545784" target="_blank" rel="noopener noreferrer" class="pub-btn download-btn">
+                <i class="fa-solid fa-file-pdf"></i> Download PDF
               </a>
+              <button class="pub-btn btn-open-paper-modal" data-paper="qpain" data-focus="cite">
+                <i class="fa-solid fa-quote-right"></i> Cite This
+              </button>
             </div>
           </div>
 
@@ -360,12 +360,12 @@
               <button class="pub-btn primary btn-open-paper-modal" data-paper="peccii">
                 <i class="fa-solid fa-circle-info"></i> Inside Details
               </button>
-              <button class="pub-btn disabled-btn" disabled title="Paper PDF awaiting final conference proceedings release">
-                <i class="fa-solid fa-file-pdf"></i> Paper PDF
-              </button>
-              <a href="https://scholar.google.com/citations?user=ymrPZNgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="pub-btn">
-                <i class="fa-solid fa-graduation-cap"></i> Citation
+              <a href="https://doi.org/10.1109/PECCII70991.2026.11661850" target="_blank" rel="noopener noreferrer" class="pub-btn download-btn">
+                <i class="fa-solid fa-file-pdf"></i> Download PDF
               </a>
+              <button class="pub-btn btn-open-paper-modal" data-paper="peccii" data-focus="cite">
+                <i class="fa-solid fa-quote-right"></i> Cite This
+              </button>
             </div>
           </div>
 
@@ -389,12 +389,12 @@
               <button class="pub-btn primary btn-open-paper-modal" data-paper="iccit">
                 <i class="fa-solid fa-circle-info"></i> Inside Details
               </button>
-              <a href="assets/papers/Bangla_Fake_News_DG_SSOFNet_Thesis.pdf" download="Bangla_Fake_News_Turza_Monograph.pdf" class="pub-btn download-btn">
-                <i class="fa-solid fa-file-pdf"></i> Download Paper PDF
+              <a href="https://doi.org/10.1109/ICCIT68739.2025.11491228" target="_blank" rel="noopener noreferrer" class="pub-btn download-btn">
+                <i class="fa-solid fa-file-pdf"></i> Download PDF
               </a>
-              <a href="https://scholar.google.com/citations?user=ymrPZNgAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="pub-btn">
-                <i class="fa-solid fa-graduation-cap"></i> Citation
-              </a>
+              <button class="pub-btn btn-open-paper-modal" data-paper="iccit" data-focus="cite">
+                <i class="fa-solid fa-quote-right"></i> Cite This
+              </button>
             </div>
           </div>
         </section>
@@ -784,16 +784,24 @@
 
           <div class="material-card">
             <div>
-              <div class="material-card-header"><i class="fa-solid fa-file-pdf" style="color: #2563eb;"></i> Paper / Thesis Monograph</div>
-              <div class="material-card-desc">Complete academic monograph detailing dataset preparation, preprocessing pipelines, model architectures, loss formulations, and comparative results.</div>
+              <div class="material-card-header"><i class="fa-solid fa-file-pdf" style="color: #2563eb;"></i> Paper Document & Official DOI</div>
+              <div class="material-card-desc">Published in IEEE ICCIT 2025 proceedings with registered DOI (10.1109/ICCIT68739.2025.11491228). Access official IEEE full text or monograph.</div>
             </div>
-            <div style="padding: 1.25rem 1rem; text-align: center; background: var(--bg-card); border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
-              <i class="fa-solid fa-file-pdf" style="font-size: 2.25rem; color: #ef4444; margin-bottom: 0.35rem; display: block;"></i>
-              <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted);">PDF Document (70 Pages)</span>
+            <div style="padding: 1rem 0.75rem; text-align: center; background: var(--bg-card); border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+              <i class="fa-solid fa-file-pdf" style="font-size: 2rem; color: #ef4444; margin-bottom: 0.35rem; display: block;"></i>
+              <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-main);">DOI: 10.1109/ICCIT68739.2025.11491228</span>
             </div>
-            <a href="assets/papers/Bangla_Fake_News_DG_SSOFNet_Thesis.pdf" download="Bangla_Fake_News_Turza_Monograph.pdf" class="pub-btn download-btn" style="text-align: center; justify-content: center;">
-              <i class="fa-solid fa-download"></i> Download Full Paper
-            </a>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              <a href="https://doi.org/10.1109/ICCIT68739.2025.11491228" target="_blank" rel="noopener noreferrer" class="pub-btn download-btn" style="text-align: center; justify-content: center;">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open via DOI (IEEE Xplore)
+              </a>
+              <a href="https://ieeexplore.ieee.org/iel8/11489965/11490092/11491228.pdf" target="_blank" rel="noopener noreferrer" class="pub-btn" style="text-align: center; justify-content: center;">
+                <i class="fa-solid fa-file-pdf"></i> Direct IEEE PDF Link
+              </a>
+              <a href="assets/papers/Bangla_Fake_News_DG_SSOFNet_Thesis.pdf" download="Bangla_Fake_News_Turza_Monograph.pdf" class="pub-btn" style="text-align: center; justify-content: center;">
+                <i class="fa-solid fa-download"></i> Download Full Monograph (70p)
+              </a>
+            </div>
           </div>
 
           <div class="material-card">
@@ -824,7 +832,8 @@
   author={Turza, Shubail Haque and others},
   booktitle={2025 28th International Conference on Computer and Information Technology (ICCIT)},
   year={2025},
-  organization={IEEE}
+  organization={IEEE},
+  doi={10.1109/ICCIT68739.2025.11491228}
 }</pre>
         </div>
       </div>
@@ -861,21 +870,23 @@
             </div>
           </div>
 
-          <div class="material-card disabled-material" title="Full paper PDF awaiting final conference proceedings release">
+          <div class="material-card">
             <div>
-              <div class="material-card-header">
-                <i class="fa-solid fa-file-pdf" style="color: var(--text-muted);"></i> Paper Document
-                <span class="unavailable-pill"><i class="fa-solid fa-clock"></i> In Press</span>
-              </div>
-              <div class="material-card-desc">Camera-ready manuscript presented at PECCII 2026. Awaiting IEEE Xplore proceedings release.</div>
+              <div class="material-card-header"><i class="fa-solid fa-file-pdf" style="color: #2563eb;"></i> Paper Document & Official DOI</div>
+              <div class="material-card-desc">Published in IEEE PECCII 2026 proceedings with verified DOI (10.1109/PECCII70991.2026.11661850). Available on IEEE Xplore.</div>
             </div>
-            <div style="padding: 1.25rem 1rem; text-align: center; background: var(--bg-card); border-radius: var(--radius-sm); border: 1px dashed var(--border-color);">
-              <i class="fa-solid fa-file-pdf" style="font-size: 2.25rem; color: var(--text-muted); opacity: 0.5; margin-bottom: 0.35rem; display: block;"></i>
-              <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted);">Awaiting Publisher Release</span>
+            <div style="padding: 1rem 0.75rem; text-align: center; background: var(--bg-card); border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+              <i class="fa-solid fa-file-pdf" style="font-size: 2rem; color: #ef4444; margin-bottom: 0.35rem; display: block;"></i>
+              <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-main);">DOI: 10.1109/PECCII70991.2026.11661850</span>
             </div>
-            <button class="pub-btn disabled-btn" disabled title="Full paper PDF awaiting final conference proceedings release" style="justify-content: center; text-align: center;">
-              <i class="fa-solid fa-clock"></i> Paper PDF (Pending Release)
-            </button>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              <a href="https://doi.org/10.1109/PECCII70991.2026.11661850" target="_blank" rel="noopener noreferrer" class="pub-btn download-btn" style="text-align: center; justify-content: center;">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open via DOI (IEEE Xplore)
+              </a>
+              <a href="https://ieeexplore.ieee.org/iel8/11661727/11661798/11661850.pdf" target="_blank" rel="noopener noreferrer" class="pub-btn" style="text-align: center; justify-content: center;">
+                <i class="fa-solid fa-file-pdf"></i> Direct IEEE PDF Link
+              </a>
+            </div>
           </div>
 
           <div class="material-card disabled-material" title="Presentation slides not publicly available for this paper">
@@ -922,7 +933,9 @@
   title={ResNeXt50-Guided Hybrid CNN-Transformer Framework for Early Stroke Abnormality Detection: A Comparative Deep Learning Study},
   author={Turza, Shubail Haque and others},
   booktitle={2026 International Conference on Power, Electronics, Communications, Computing, and Intelligent Infrastructure (PECCII)},
-  year={2026}
+  year={2026},
+  organization={IEEE},
+  doi={10.1109/PECCII70991.2026.11661850}
 }</pre>
         </div>
       </div>
@@ -941,21 +954,23 @@
 
         <div class="paper-modal-sec-title">Research Materials & Indexing</div>
         <div class="modal-materials-grid">
-          <div class="material-card disabled-material" title="Paper PDF will be available upon publication in IEEE Xplore proceedings">
+          <div class="material-card">
             <div>
-              <div class="material-card-header">
-                <i class="fa-solid fa-file-pdf" style="color: var(--text-muted);"></i> Paper Document
-                <span class="unavailable-pill"><i class="fa-solid fa-clock"></i> In Press</span>
-              </div>
-              <div class="material-card-desc">Accepted for presentation and publication in IEEE QPAIN 2026 proceedings.</div>
+              <div class="material-card-header"><i class="fa-solid fa-file-pdf" style="color: #2563eb;"></i> Paper Document & Official DOI</div>
+              <div class="material-card-desc">Published in IEEE QPAIN 2026 proceedings with verified DOI (10.1109/QPAIN69676.2026.11545784). Available on IEEE Xplore.</div>
             </div>
-            <div style="padding: 1.25rem 1rem; text-align: center; background: var(--bg-card); border-radius: var(--radius-sm); border: 1px dashed var(--border-color);">
-              <i class="fa-solid fa-file-pdf" style="font-size: 2.25rem; color: var(--text-muted); opacity: 0.5; margin-bottom: 0.35rem; display: block;"></i>
-              <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted);">Awaiting IEEE Publication</span>
+            <div style="padding: 1rem 0.75rem; text-align: center; background: var(--bg-card); border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+              <i class="fa-solid fa-file-pdf" style="font-size: 2rem; color: #ef4444; margin-bottom: 0.35rem; display: block;"></i>
+              <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-main);">DOI: 10.1109/QPAIN69676.2026.11545784</span>
             </div>
-            <button class="pub-btn disabled-btn" disabled title="Paper PDF will be available upon publication in IEEE Xplore proceedings" style="justify-content: center; text-align: center;">
-              <i class="fa-solid fa-clock"></i> Paper PDF (In Press)
-            </button>
+            <div style="display: flex; flex-direction: column; gap: 0.45rem;">
+              <a href="https://doi.org/10.1109/QPAIN69676.2026.11545784" target="_blank" rel="noopener noreferrer" class="pub-btn download-btn" style="text-align: center; justify-content: center;">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open via DOI (IEEE Xplore)
+              </a>
+              <a href="https://ieeexplore.ieee.org/iel8/11544160/11545514/11545784.pdf" target="_blank" rel="noopener noreferrer" class="pub-btn" style="text-align: center; justify-content: center;">
+                <i class="fa-solid fa-file-pdf"></i> Direct IEEE PDF Link
+              </a>
+            </div>
           </div>
 
           <div class="material-card disabled-material" title="Presentation slides not publicly available for this paper">
@@ -978,7 +993,7 @@
           <div class="material-card">
             <div>
               <div class="material-card-header"><i class="fa-solid fa-arrow-up-right-from-square" style="color: #2563eb;"></i> IEEE & ORCID Registry</div>
-              <div class="material-card-desc">Scheduled for publication in IEEE Xplore proceedings with unique ORCID attribution.</div>
+              <div class="material-card-desc">Published in IEEE Xplore proceedings with unique ORCID attribution.</div>
             </div>
             <div style="padding: 1.25rem 1rem; text-align: center; background: var(--bg-card); border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
               <i class="ai ai-orcid" style="font-size: 2.25rem; color: #a6ce39; margin-bottom: 0.35rem; display: block;"></i>
@@ -1012,7 +1027,8 @@
   author={Turza, Shubail Haque and others},
   booktitle={2026 IEEE 2nd International Conference on Quantum Photonics, Artificial Intelligence \& Networking (QPAIN)},
   year={2026},
-  organization={IEEE}
+  organization={IEEE},
+  doi={10.1109/QPAIN69676.2026.11545784}
 }</pre>
         </div>
       </div>
@@ -1028,6 +1044,6 @@
     </div>
   </div>
 
-  <script src="assets/js/script.js?v=2.5"></script>
+  <script src="assets/js/script.js?v=2.6"></script>
 </body>
 </html>
