@@ -428,10 +428,18 @@ img {
 }
 
 /* Biography / About */
+.about-name {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.65rem;
+  letter-spacing: -0.4px;
+}
+
 .about-text {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--text-muted);
-  line-height: 1.8;
+  line-height: 1.85;
   margin-bottom: 1.25rem;
 }
 
