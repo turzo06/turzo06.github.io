@@ -1435,18 +1435,22 @@ html[data-theme="dark"] .material-tag.has-slides {
   background: #166534;
   color: #ffffff;
   border-color: #166534;
+  box-shadow: 0 4px 10px rgba(22, 101, 52, 0.2);
 }
 
-html[data-theme="dark"] .pub-btn.cert-btn {
-  background: #064e3b;
-  color: #a7f3d0;
-  border-color: #047857;
+html[data-theme="dark"] .pub-btn.cert-btn,
+[data-theme="dark"] .pub-btn.cert-btn {
+  background: rgba(16, 185, 129, 0.15);
+  color: #6ee7b7;
+  border-color: rgba(16, 185, 129, 0.35);
 }
 
-html[data-theme="dark"] .pub-btn.cert-btn:hover {
+html[data-theme="dark"] .pub-btn.cert-btn:hover,
+[data-theme="dark"] .pub-btn.cert-btn:hover {
   background: #10b981;
   color: #0f172a;
   border-color: #10b981;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.25);
 }
 
 .pub-btn.download-btn {
