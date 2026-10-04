@@ -753,6 +753,25 @@ img {
   color: var(--text-main);
 }
 
+.cp-stat-value a {
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: var(--transition);
+}
+
+.cp-stat-value a:hover {
+  text-decoration: underline;
+  color: var(--accent-hover);
+}
+
+.cp-stat-value a i {
+  font-size: 0.72rem;
+  opacity: 0.8;
+}
+
 .cp-stat-sub {
   font-size: 0.75rem;
   color: var(--text-light);
