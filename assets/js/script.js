@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 6. Interactive Cursor Spotlight Tracker (Hover Effect)
-  const interactiveCards = document.querySelectorAll('.pub-card, .timeline-card, .cp-stat-card, .cert-card');
+  const interactiveCards = document.querySelectorAll('.pub-card, .timeline-card, .cp-stat-card, .cert-card, .ref-card, .skills-group');
   interactiveCards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
