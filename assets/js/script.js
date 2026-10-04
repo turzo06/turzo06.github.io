@@ -1,4 +1,4 @@
-// Main JavaScript for Shubail Haque Turzo Academic Portfolio
+// Main JavaScript for Shubail Haque Turza Academic Portfolio
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Dark/Light Theme Switcher
