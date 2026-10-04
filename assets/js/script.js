@@ -105,22 +105,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 5. Image Lightbox
+  // 5. Image Lightbox (Universal for any element with data-img)
   const lightbox = document.getElementById('lightbox-modal');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxCaption = document.getElementById('lightbox-caption');
   const lightboxClose = document.getElementById('lightbox-close');
 
   if (lightbox && lightboxImg && lightboxCaption) {
-    document.querySelectorAll('.gallery-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const imgSrc = card.getAttribute('data-img');
-        const caption = card.getAttribute('data-caption');
+    document.addEventListener('click', (e) => {
+      const trigger = e.target.closest('[data-img]');
+      if (trigger) {
+        e.preventDefault();
+        const imgSrc = trigger.getAttribute('data-img');
+        const caption = trigger.getAttribute('data-caption') || '';
         lightboxImg.src = imgSrc;
         lightboxCaption.innerText = caption;
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
-      });
+      }
     });
 
     function closeLightbox() {
@@ -140,6 +142,49 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && lightbox.classList.contains('active')) {
         closeLightbox();
+      }
+    });
+  }
+
+  // 6. Paper Detail Modal System
+  const paperModal = document.getElementById('paper-detail-modal');
+  const paperModalClose = document.getElementById('paper-modal-close');
+
+  if (paperModal) {
+    document.querySelectorAll('.btn-open-paper-modal').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const paperId = btn.getAttribute('data-paper');
+        paperModal.querySelectorAll('.paper-modal-content-item').forEach(item => {
+          item.style.display = 'none';
+        });
+        const targetContent = document.getElementById(`modal-content-${paperId}`);
+        if (targetContent) {
+          targetContent.style.display = 'block';
+          paperModal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    function closePaperModal() {
+      paperModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    if (paperModalClose) {
+      paperModalClose.addEventListener('click', closePaperModal);
+    }
+
+    paperModal.addEventListener('click', (e) => {
+      if (e.target === paperModal) {
+        closePaperModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && paperModal.classList.contains('active')) {
+        closePaperModal();
       }
     });
   }
