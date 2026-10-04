@@ -755,7 +755,8 @@ img {
   margin-bottom: 0.5rem;
 }
 
-.pub-authors .highlight-author {
+.pub-authors .highlight-author,
+.paper-modal-authors .highlight-author {
   color: var(--accent);
   font-weight: 700;
   text-decoration: underline;
