@@ -1575,6 +1575,46 @@ html[data-theme="dark"] .pub-btn.download-btn:hover {
   gap: 0.75rem;
 }
 
+.material-card.disabled-material {
+  opacity: 0.7;
+  border-style: dashed;
+  cursor: not-allowed;
+}
+
+.material-card.disabled-material:hover {
+  border-color: var(--border-color);
+}
+
+.pub-btn.disabled-btn {
+  opacity: 0.65;
+  cursor: not-allowed;
+  background: var(--bg-card);
+  color: var(--text-muted);
+  border-color: var(--border-color);
+}
+
+.pub-btn.disabled-btn:hover {
+  background: var(--bg-card);
+  color: var(--text-muted);
+  border-color: var(--border-color);
+  transform: none;
+  box-shadow: none;
+}
+
+.unavailable-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.15rem 0.45rem;
+  border-radius: 9999px;
+  background: var(--bg-card);
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  margin-left: auto;
+}
+
 .material-card-header {
   display: flex;
   align-items: center;
