@@ -21,7 +21,7 @@
   <!-- Icons & Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
-  <link rel="stylesheet" href="assets/css/style.css?v=2.4" />
+  <link rel="stylesheet" href="assets/css/style.css?v=2.5" />
 </head>
 <body>
 
@@ -270,11 +270,123 @@
             <h2 class="section-title">
               <i class="fa-solid fa-book-open"></i> Publications
             </h2>
-            <span class="section-badge">3 Papers</span>
+            <span class="section-badge">5 Papers</span>
           </div>
 
-          <!-- Publication 1: QPAIN 2026 -->
-          <div class="pub-card">
+          <!-- Modular Category Filter Tabs -->
+          <div class="pub-filter-container">
+            <button class="pub-filter-btn active" data-filter="all">
+              All <span class="pub-filter-count">5</span>
+            </button>
+            <button class="pub-filter-btn" data-filter="journal">
+              Journal Manuscripts <span class="pub-filter-count">2</span>
+            </button>
+            <button class="pub-filter-btn" data-filter="conference">
+              Conference Proceedings <span class="pub-filter-count">3</span>
+            </button>
+          </div>
+
+          <!-- Publication 1: Journal Manuscript (DG-SSOFNet) -->
+          <div class="pub-card" data-category="journal" data-paper="dgssofnet">
+            <div class="pub-top">
+              <span class="pub-badge pending-badge">⌛ Journal submission pending</span>
+              <span class="pub-year">2026</span>
+            </div>
+            <div class="pub-status-note">Manuscript ready; supervisor revision is ongoing before submission.</div>
+            <h3 class="pub-title">
+              DG-SSOFNet: A Novel Corpus and Dual-Gated Multi-Stream Fusion Network for Bangla Fake News Detection
+            </h3>
+            <div class="pub-authors">
+              <span class="highlight-author">Shubail Haque Turza</span>, et al.
+            </div>
+            <div class="pub-venue">
+              <i class="fa-solid fa-file-contract"></i>
+              Journal Manuscript (Pre-submission) · Department of ICE, PUST
+            </div>
+            <p class="pub-desc">
+              Presents a curated Bengali misinformation corpus paired with a dual-gated multi-stream deep fusion network. Channels tokenized representations across BangorBERT, BanglaBERT, and linguistic syntactic streams with adaptive feature gating to eliminate semantic noise.
+            </p>
+            <div class="pub-materials-summary">
+              <span class="material-tag has-paper"><i class="fa-solid fa-file-pdf"></i> Monograph / Thesis PDF</span>
+              <span class="material-tag has-slides"><i class="fa-solid fa-file-powerpoint"></i> Presentation Deck PPTX</span>
+              <span class="material-tag has-cert"><i class="fa-solid fa-certificate"></i> Presentation Cert Available</span>
+            </div>
+            <div class="pub-actions">
+              <button class="pub-btn primary btn-open-paper-modal" data-paper="dgssofnet">
+                <i class="fa-solid fa-circle-info"></i> Inside Details
+              </button>
+              <a href="assets/papers/Bangla_Fake_News_DG_SSOFNet_Thesis.pdf" download="Bangla_Fake_News_Turza_Monograph.pdf" class="pub-btn download-btn">
+                <i class="fa-solid fa-file-pdf"></i> Download Paper PDF
+              </a>
+              <a href="https://docs.google.com/presentation/d/1xhMFJbwvKw9Oj2ogbqO4HvBmAiexXAHa/edit?usp=drivesdk&ouid=117110952110583969542&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="pub-btn" title="Open Google Slides Presentation">
+                <i class="fa-solid fa-chalkboard-user"></i> Google Slides
+              </a>
+              <a href="assets/presentations/508_Presentation.pptx" download="ICCIT_508_Presentation_Turza.pptx" class="pub-btn" title="Download PPTX Slides">
+                <i class="fa-solid fa-file-powerpoint"></i> Slides (PPTX)
+              </a>
+              <button class="pub-btn cert-btn" data-img="assets/certificates/iccit_508_certificate.png" data-caption="IEEE ICCIT 2025 Certificate of Appreciation - Awarded to Shubail Haque Turza for Paper ID: 508">
+                <i class="fa-solid fa-certificate"></i> View Presentation Cert
+              </button>
+              <button class="pub-btn btn-bibtex" data-target="bib-dgssofnet">
+                <i class="fa-solid fa-quote-right"></i> BibTeX
+              </button>
+            </div>
+            <div class="bibtex-block" id="bib-dgssofnet">
+              <button class="copy-bib-btn">Copy</button>
+              <pre>@article{turza2026dgssofnet,
+  title={DG-SSOFNet: A Novel Corpus and Dual-Gated Multi-Stream Fusion Network for Bangla Fake News Detection},
+  author={Turza, Shubail Haque and others},
+  journal={Pre-submission Manuscript},
+  year={2026}
+}</pre>
+            </div>
+          </div>
+
+          <!-- Publication 2: Journal Manuscript (PhytoCDG) -->
+          <div class="pub-card" data-category="journal" data-paper="phytocdg">
+            <div class="pub-top">
+              <span class="pub-badge pending-badge">⌛ Journal submission pending</span>
+              <span class="pub-year">2026</span>
+            </div>
+            <div class="pub-status-note">Manuscript ready; supervisor revision is ongoing before submission.</div>
+            <h3 class="pub-title">
+              PhytoCDG: Disease-Guided Context Gating for Dual-Task Foliar Lesion Segmentation and Disease Classification
+            </h3>
+            <div class="pub-authors">
+              <span class="highlight-author">Shubail Haque Turza</span>, et al.
+            </div>
+            <div class="pub-venue">
+              <i class="fa-solid fa-file-contract"></i>
+              Journal Manuscript (Pre-submission) · Department of ICE, PUST
+            </div>
+            <p class="pub-desc">
+              Formulates a joint context-gated deep architecture for synchronized leaf lesion segmentation and multi-class pathological classification. Context gating channels disease probability maps into spatial mask branches, suppressing background clutter in field-acquired foliar images.
+            </p>
+            <div class="pub-materials-summary">
+              <span class="material-tag"><i class="fa-solid fa-code"></i> Dual-Task Gating Network</span>
+              <span class="material-tag"><i class="fa-solid fa-microscope"></i> Plant Pathology Vision</span>
+            </div>
+            <div class="pub-actions">
+              <button class="pub-btn primary btn-open-paper-modal" data-paper="phytocdg">
+                <i class="fa-solid fa-circle-info"></i> Inside Details
+              </button>
+              <button class="pub-btn btn-bibtex" data-target="bib-phytocdg">
+                <i class="fa-solid fa-quote-right"></i> BibTeX
+              </button>
+            </div>
+            <div class="bibtex-block" id="bib-phytocdg">
+              <button class="copy-bib-btn">Copy</button>
+              <pre>@article{turza2026phytocdg,
+  title={PhytoCDG: Disease-Guided Context Gating for Dual-Task Foliar Lesion Segmentation and Disease Classification},
+  author={Turza, Shubail Haque and others},
+  journal={Pre-submission Manuscript},
+  year={2026}
+}</pre>
+            </div>
+          </div>
+
+          <!-- Publication 3: QPAIN 2026 -->
+          <div class="pub-card" data-category="conference" data-paper="qpain">
             <div class="pub-top">
               <span class="pub-badge">Conference Paper</span>
               <span class="pub-year">2026</span>
@@ -322,8 +434,8 @@
             </div>
           </div>
 
-          <!-- Publication 2: PECCII 2026 -->
-          <div class="pub-card">
+          <!-- Publication 4: PECCII 2026 -->
+          <div class="pub-card" data-category="conference" data-paper="peccii">
             <div class="pub-top">
               <span class="pub-badge">Conference Paper · Paper ID: 647</span>
               <span class="pub-year">2026</span>
@@ -392,8 +504,8 @@
             </div>
           </div>
 
-          <!-- Publication 3: ICCIT 2025 -->
-          <div class="pub-card">
+          <!-- Publication 5: ICCIT 2025 -->
+          <div class="pub-card" data-category="conference" data-paper="iccit">
             <div class="pub-top">
               <span class="pub-badge">Conference Paper · Paper ID: 508</span>
               <span class="pub-year">2025</span>
@@ -829,6 +941,139 @@
     <div class="paper-modal-box">
       <button class="paper-modal-close" id="paper-modal-close" aria-label="Close details modal">&times;</button>
       
+      <!-- Content for DG-SSOFNet Paper -->
+      <div class="paper-modal-content-item" id="modal-content-dgssofnet" style="display: none;">
+        <span class="paper-modal-badge pending-badge">⌛ Journal submission pending</span>
+        <div class="pub-status-note" style="margin-top: 0.5rem;">Manuscript ready; supervisor revision is ongoing before submission.</div>
+        <h2 class="paper-modal-title">DG-SSOFNet: A Novel Corpus and Dual-Gated Multi-Stream Fusion Network for Bangla Fake News Detection</h2>
+        <div class="paper-modal-authors"><strong>Authors:</strong> <span class="highlight-author">Shubail Haque Turza</span>, et al.</div>
+        <div class="paper-modal-venue"><i class="fa-solid fa-file-contract"></i> Pre-submission Journal Manuscript · Department of ICE, PUST</div>
+        
+        <div class="paper-modal-sec-title">Abstract & Methodology</div>
+        <div class="paper-modal-abstract">
+          Bengali online media suffers from severe misinformation diffusion, exacerbated by low-resource linguistic challenges, complex syntactic inflections, and colloquial vernacular variations. This study introduces an authentic, manually annotated multi-domain Bengali news corpus alongside a specialized dual-gated multi-stream fusion architecture (DG-SSOFNet). The framework ingests raw text across parallel encoder streams: language-specific transformer backbones (BangorBERT and BanglaBERT) coupled with linguistic feature extractors. Adaptive gating units filter redundant and noisy lexical tokens before feeding representations to a multi-stream fusion layer. Extensive empirical evaluations demonstrate superior macro F1 scores and resilience against adversarially manipulated social headlines.
+        </div>
+
+        <div class="paper-modal-sec-title">Research Materials & Presentation Files</div>
+        <div class="modal-materials-grid">
+          <div class="material-card">
+            <div>
+              <div class="material-card-header"><i class="fa-solid fa-file-pdf" style="color: #2563eb;"></i> Thesis Monograph / Paper PDF</div>
+              <div class="material-card-desc">70-page comprehensive thesis monograph covering dataset curation, linguistic tokenization, loss formulations, and ablation studies.</div>
+            </div>
+            <div style="padding: 1.25rem 1rem; text-align: center; background: var(--bg-card); border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+              <i class="fa-solid fa-file-pdf" style="font-size: 2.25rem; color: #ef4444; margin-bottom: 0.35rem; display: block;"></i>
+              <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted);">Complete Monograph (70 Pages)</span>
+            </div>
+            <a href="assets/papers/Bangla_Fake_News_DG_SSOFNet_Thesis.pdf" download="Bangla_Fake_News_Turza_Monograph.pdf" class="pub-btn download-btn" style="text-align: center; justify-content: center;">
+              <i class="fa-solid fa-download"></i> Download Full Monograph
+            </a>
+          </div>
+
+          <div class="material-card">
+            <div>
+              <div class="material-card-header"><i class="fa-solid fa-file-powerpoint" style="color: #ea580c;"></i> Presentation Deck</div>
+              <div class="material-card-desc">Slide deck detailing model architecture, gating mechanics, and benchmark comparisons. View on Google Slides or download PPTX.</div>
+            </div>
+            <div style="padding: 1.25rem 1rem; text-align: center; background: var(--bg-card); border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+              <i class="fa-solid fa-file-powerpoint" style="font-size: 2.25rem; color: #ea580c; margin-bottom: 0.35rem; display: block;"></i>
+              <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted);">Slide Deck (Google Slides & PPTX)</span>
+            </div>
+            <div style="display: flex; gap: 0.5rem; flex-direction: column;">
+              <a href="https://docs.google.com/presentation/d/1xhMFJbwvKw9Oj2ogbqO4HvBmAiexXAHa/edit?usp=drivesdk&ouid=117110952110583969542&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="pub-btn" style="text-align: center; justify-content: center; background: #fff7ed; color: #c2410c; border-color: #fed7aa;" title="Open in Google Slides">
+                <i class="fa-solid fa-chalkboard-user"></i> Open Google Slides
+              </a>
+              <a href="assets/presentations/508_Presentation.pptx" download="ICCIT_508_Presentation_Turza.pptx" class="pub-btn" style="text-align: center; justify-content: center;" title="Download PPTX File">
+                <i class="fa-solid fa-download"></i> Download Slides (PPTX)
+              </a>
+            </div>
+          </div>
+
+          <div class="material-card">
+            <div>
+              <div class="material-card-header"><i class="fa-solid fa-certificate" style="color: #10b981;"></i> Presentation Certificate</div>
+              <div class="material-card-desc">Certificate awarded for presentation on Bengali misinformation classification at IEEE ICCIT 2025.</div>
+            </div>
+            <div class="material-card-thumb-wrap" data-img="assets/certificates/iccit_508_certificate.png" data-caption="IEEE ICCIT 2025 Certificate of Appreciation - Awarded to Shubail Haque Turza for Paper ID: 508">
+              <img src="assets/certificates/iccit_508_certificate.png" alt="ICCIT Certificate Preview" class="material-card-thumb" />
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+              <button class="pub-btn cert-btn" style="flex: 1;" data-img="assets/certificates/iccit_508_certificate.png" data-caption="IEEE ICCIT 2025 Certificate of Appreciation - Awarded to Shubail Haque Turza for Paper ID: 508">
+                <i class="fa-solid fa-eye"></i> View
+              </button>
+              <a href="assets/certificates/iccit_508_certificate.pdf" download="IEEE_ICCIT_508_Certificate.pdf" class="pub-btn" style="flex: 1; text-align: center; justify-content: center;">
+                <i class="fa-solid fa-download"></i> PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="paper-modal-sec-title">Academic Citation</div>
+        <div class="bibtex-block show" style="margin-top: 0.5rem;">
+          <pre>@article{turza2026dgssofnet,
+  title={DG-SSOFNet: A Novel Corpus and Dual-Gated Multi-Stream Fusion Network for Bangla Fake News Detection},
+  author={Turza, Shubail Haque and others},
+  journal={Pre-submission Manuscript},
+  year={2026}
+}</pre>
+        </div>
+      </div>
+
+      <!-- Content for PhytoCDG Paper -->
+      <div class="paper-modal-content-item" id="modal-content-phytocdg" style="display: none;">
+        <span class="paper-modal-badge pending-badge">⌛ Journal submission pending</span>
+        <div class="pub-status-note" style="margin-top: 0.5rem;">Manuscript ready; supervisor revision is ongoing before submission.</div>
+        <h2 class="paper-modal-title">PhytoCDG: Disease-Guided Context Gating for Dual-Task Foliar Lesion Segmentation and Disease Classification</h2>
+        <div class="paper-modal-authors"><strong>Authors:</strong> <span class="highlight-author">Shubail Haque Turza</span>, et al.</div>
+        <div class="paper-modal-venue"><i class="fa-solid fa-file-contract"></i> Pre-submission Journal Manuscript · Department of ICE, PUST</div>
+        
+        <div class="paper-modal-sec-title">Abstract & Methodology</div>
+        <div class="paper-modal-abstract">
+          Foliar disease diagnosis under uncontrolled agricultural conditions is hindered by overlapping foliage, irregular shadow patterns, and ambiguous symptom boundaries. PhytoCDG establishes a synchronized dual-task vision framework executing pixel-level lesion segmentation alongside holistic disease taxonomic classification. Rather than treating segmentation and classification independently, disease-guided context gating channels class activation probabilities directly into spatial gating modules. This suppresses background soil and non-pathological leaf blemishes, focusing pixel masks strictly onto active lesion margins. A compound loss function unifies categorical cross-entropy with generalized Dice-focal loss, achieving superior segmentation overlap and classification accuracy across challenging field datasets.
+        </div>
+
+        <div class="paper-modal-sec-title">Research Materials & Technical Pipeline</div>
+        <div class="modal-materials-grid">
+          <div class="material-card">
+            <div>
+              <div class="material-card-header"><i class="fa-solid fa-code" style="color: #2563eb;"></i> Dual-Task Gating Architecture</div>
+              <div class="material-card-desc">End-to-end deep learning pipeline combining feature extraction backbones with context-gated spatial attention heads.</div>
+            </div>
+            <div style="padding: 1.25rem 1rem; text-align: center; background: var(--bg-card); border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+              <i class="fa-solid fa-network-wired" style="font-size: 2.25rem; color: #2563eb; margin-bottom: 0.35rem; display: block;"></i>
+              <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted);">Deep Learning Vision Pipeline</span>
+            </div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; text-align: center;">
+              Synchronized segmentation & classification
+            </div>
+          </div>
+
+          <div class="material-card">
+            <div>
+              <div class="material-card-header"><i class="fa-solid fa-microscope" style="color: #10b981;"></i> Plant Pathology Benchmark</div>
+              <div class="material-card-desc">Evaluated across standard field leaf pathology benchmarks under unstructured lighting and severe background clutter.</div>
+            </div>
+            <div style="padding: 1.25rem 1rem; text-align: center; background: var(--bg-card); border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+              <i class="fa-solid fa-seedling" style="font-size: 2.25rem; color: #10b981; margin-bottom: 0.35rem; display: block;"></i>
+              <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted);">Multi-Class Foliar Disease Benchmark</span>
+            </div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; text-align: center;">
+              Validated against state-of-the-art vision models
+            </div>
+          </div>
+        </div>
+
+        <div class="paper-modal-sec-title">Academic Citation</div>
+        <div class="bibtex-block show" style="margin-top: 0.5rem;">
+          <pre>@article{turza2026phytocdg,
+  title={PhytoCDG: Disease-Guided Context Gating for Dual-Task Foliar Lesion Segmentation and Disease Classification},
+  author={Turza, Shubail Haque and others},
+  journal={Pre-submission Manuscript},
+  year={2026}
+}</pre>
+        </div>
+      </div>
+
       <!-- Content for ICCIT Paper (Fake News) -->
       <div class="paper-modal-content-item" id="modal-content-iccit" style="display: none;">
         <span class="paper-modal-badge">Conference Paper · Paper ID: 508</span>
@@ -1036,6 +1281,6 @@
     </div>
   </div>
 
-  <script src="assets/js/script.js?v=2.4"></script>
+  <script src="assets/js/script.js?v=2.5"></script>
 </body>
 </html>

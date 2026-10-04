@@ -146,31 +146,90 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 6. Paper Detail Modal System
+  // 6. Interactive Cursor Spotlight Tracker (Hover Effect)
+  const interactiveCards = document.querySelectorAll('.pub-card, .timeline-card, .cp-stat-card, .cert-card');
+  interactiveCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
+
+  // 7. Modular Publication Category Filtering
+  const filterBtns = document.querySelectorAll('.pub-filter-btn');
+  const pubCards = document.querySelectorAll('.pub-card');
+
+  if (filterBtns.length > 0 && pubCards.length > 0) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+
+        pubCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.classList.remove('filtering-out');
+            card.classList.add('filtering-in');
+          } else {
+            card.classList.add('filtering-out');
+            card.classList.remove('filtering-in');
+          }
+        });
+      });
+    });
+  }
+
+  // 8. Paper Detail Modal System (Opens from Card click or "Inside Details" button)
   const paperModal = document.getElementById('paper-detail-modal');
   const paperModalClose = document.getElementById('paper-modal-close');
 
+  function openPaperModal(paperId) {
+    if (!paperModal || !paperId) return;
+    paperModal.querySelectorAll('.paper-modal-content-item').forEach(item => {
+      item.style.display = 'none';
+    });
+    const targetContent = document.getElementById(`modal-content-${paperId}`);
+    if (targetContent) {
+      targetContent.style.display = 'block';
+      paperModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closePaperModal() {
+    if (!paperModal) return;
+    paperModal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
   if (paperModal) {
+    // Open on button click
     document.querySelectorAll('.btn-open-paper-modal').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
+        e.stopPropagation();
         const paperId = btn.getAttribute('data-paper');
-        paperModal.querySelectorAll('.paper-modal-content-item').forEach(item => {
-          item.style.display = 'none';
-        });
-        const targetContent = document.getElementById(`modal-content-${paperId}`);
-        if (targetContent) {
-          targetContent.style.display = 'block';
-          paperModal.classList.add('active');
-          document.body.style.overflow = 'hidden';
-        }
+        openPaperModal(paperId);
       });
     });
 
-    function closePaperModal() {
-      paperModal.classList.remove('active');
-      document.body.style.overflow = '';
-    }
+    // Open on full card click (unless clicking a link, button, or bibtex block)
+    pubCards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('a, button, pre, .copy-bib-btn, .bibtex-block')) {
+          return;
+        }
+        const paperId = card.getAttribute('data-paper');
+        if (paperId) {
+          openPaperModal(paperId);
+        }
+      });
+    });
 
     if (paperModalClose) {
       paperModalClose.addEventListener('click', closePaperModal);

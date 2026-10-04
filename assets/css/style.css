@@ -549,13 +549,131 @@ img {
   border-radius: var(--radius-md);
   padding: 1.4rem;
   margin-bottom: 1.25rem;
-  transition: var(--transition);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
   box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.pub-card::before,
+.timeline-card::before,
+.cp-stat-card::before,
+.cert-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: inherit;
+  background: radial-gradient(380px circle at var(--mouse-x, -500px) var(--mouse-y, -500px), rgba(37, 99, 235, 0.08), transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+[data-theme="dark"] .pub-card::before,
+[data-theme="dark"] .timeline-card::before,
+[data-theme="dark"] .cp-stat-card::before,
+[data-theme="dark"] .cert-card::before {
+  background: radial-gradient(380px circle at var(--mouse-x, -500px) var(--mouse-y, -500px), rgba(96, 165, 250, 0.12), transparent 65%);
+}
+
+.pub-card:hover::before,
+.timeline-card:hover::before,
+.cp-stat-card:hover::before,
+.cert-card:hover::before {
+  opacity: 1;
+}
+
+.pub-card > *,
+.timeline-card > *,
+.cp-stat-card > *,
+.cert-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .pub-card:hover {
-  border-color: var(--border-hover);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+}
+
+.pub-card:hover .pub-title {
+  color: var(--accent);
+}
+
+/* Modular Filter Tabs */
+.pub-filter-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.pub-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.9rem;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.pub-filter-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.pub-filter-btn.active {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+}
+
+.pub-filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.1rem 0.45rem;
+  border-radius: 9999px;
+  background: var(--bg-muted);
+  color: var(--text-main);
+}
+
+.pub-filter-btn.active .pub-filter-count {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.pub-card.filtering-out {
+  display: none !important;
+}
+
+.pub-card.filtering-in {
+  animation: fadeInCard 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInCard {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .pub-top {
@@ -569,12 +687,36 @@ img {
 .pub-badge {
   font-size: 0.75rem;
   font-weight: 700;
-  padding: 0.2rem 0.55rem;
-  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
   background: var(--accent-light);
   color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.pub-badge.pending-badge {
+  background: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #fed7aa;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+[data-theme="dark"] .pub-badge.pending-badge {
+  background: rgba(234, 88, 12, 0.15);
+  color: #fb923c;
+  border-color: rgba(251, 146, 60, 0.35);
+}
+
+.pub-status-note {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  margin-bottom: 0.45rem;
+  line-height: 1.4;
 }
 
 .pub-year {
@@ -637,13 +779,19 @@ img {
   color: var(--text-main);
   border: 1px solid var(--border-color);
   cursor: pointer;
-  transition: var(--transition);
+  transition: transform 0.15s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .pub-btn:hover {
   background: var(--accent);
   color: #ffffff;
   border-color: var(--accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.18);
+}
+
+.pub-btn:active {
+  transform: translateY(0);
 }
 
 /* BibTeX Container */
