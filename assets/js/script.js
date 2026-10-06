@@ -1,12 +1,16 @@
 // Main JavaScript for Shubail Haque Turza Academic Portfolio
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Dark/Light Theme Switcher
+  // 1. Dark/Light Theme Switcher (Default: White / Light Mode)
   const themeToggleBtn = document.getElementById('theme-toggle-btn');
   const themeIcon = document.getElementById('theme-icon');
   
-  const savedTheme = localStorage.getItem('site-theme') || 
-    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  if (localStorage.getItem('theme-version') !== 'v2') {
+    localStorage.setItem('theme-version', 'v2');
+    localStorage.setItem('site-theme', 'light');
+  }
+
+  const savedTheme = localStorage.getItem('site-theme') || 'light';
   
   function applyTheme(theme) {
     if (theme === 'dark') {
@@ -23,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-      applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      applyTheme(isDark ? 'light' : 'dark');
     });
   }
 

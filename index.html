@@ -22,6 +22,22 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
   <link rel="stylesheet" href="assets/css/style.css?v=3.2" />
+
+  <!-- Theme Initialization (Default: White / Light Mode) -->
+  <script>
+    (function () {
+      if (localStorage.getItem('theme-version') !== 'v2') {
+        localStorage.setItem('theme-version', 'v2');
+        localStorage.setItem('site-theme', 'light');
+      }
+      var theme = localStorage.getItem('site-theme') || 'light';
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+      }
+    })();
+  </script>
 </head>
 <body>
 
@@ -1075,6 +1091,6 @@
     </button>
   </div>
 
-  <script src="assets/js/script.js?v=3.0"></script>
+  <script src="assets/js/script.js?v=3.1"></script>
 </body>
 </html>
