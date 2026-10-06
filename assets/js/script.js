@@ -105,45 +105,226 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 5. Image Lightbox (Universal for any element with data-img)
+  // 5. Image Lightbox with Multi-Image Gallery, Keyboard & Touch Navigation
   const lightbox = document.getElementById('lightbox-modal');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxCaption = document.getElementById('lightbox-caption');
   const lightboxClose = document.getElementById('lightbox-close');
+  const lightboxPrev = document.getElementById('lightbox-prev');
+  const lightboxNext = document.getElementById('lightbox-next');
+  const lightboxCounter = document.getElementById('lightbox-counter');
+  const lightboxDots = document.getElementById('lightbox-dots');
 
-  if (lightbox && lightboxImg && lightboxCaption) {
+  let currentGallery = [];
+  let currentIndex = 0;
+
+  function renderDots() {
+    if (!lightboxDots) return;
+    lightboxDots.innerHTML = '';
+    if (currentGallery.length <= 1) {
+      lightboxDots.classList.add('hidden');
+      return;
+    }
+    lightboxDots.classList.remove('hidden');
+
+    currentGallery.forEach((_, idx) => {
+      const dot = document.createElement('button');
+      dot.className = `lightbox-dot ${idx === currentIndex ? 'active' : ''}`;
+      dot.setAttribute('aria-label', `Go to photo ${idx + 1}`);
+      dot.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showImageAtIndex(idx);
+      });
+      lightboxDots.appendChild(dot);
+    });
+  }
+
+  function updateDots() {
+    if (!lightboxDots) return;
+    const dots = lightboxDots.querySelectorAll('.lightbox-dot');
+    dots.forEach((dot, idx) => {
+      if (idx === currentIndex) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+  }
+
+  function preloadNeighbors() {
+    if (currentGallery.length <= 1) return;
+    const nextIdx = (currentIndex + 1) % currentGallery.length;
+    const prevIdx = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+    const nextSrc = currentGallery[nextIdx]?.getAttribute('data-img');
+    const prevSrc = currentGallery[prevIdx]?.getAttribute('data-img');
+    if (nextSrc) { const img = new Image(); img.src = nextSrc; }
+    if (prevSrc) { const img = new Image(); img.src = prevSrc; }
+  }
+
+  function showImageAtIndex(index) {
+    if (index < 0 || index >= currentGallery.length) return;
+    currentIndex = index;
+    const item = currentGallery[currentIndex];
+    const imgSrc = item.getAttribute('data-img');
+    const caption = item.getAttribute('data-caption') || item.getAttribute('alt') || '';
+
+    // Quick subtle transition
+    lightboxImg.classList.add('switching');
+    setTimeout(() => {
+      lightboxImg.src = imgSrc;
+      lightboxImg.alt = caption;
+      if (lightboxCaption) lightboxCaption.innerText = caption;
+      if (lightboxCounter) {
+        if (currentGallery.length > 1) {
+          lightboxCounter.innerText = `${currentIndex + 1} / ${currentGallery.length}`;
+          lightboxCounter.classList.remove('hidden');
+        } else {
+          lightboxCounter.classList.add('hidden');
+        }
+      }
+      updateDots();
+      lightboxImg.classList.remove('switching');
+    }, 90);
+
+    preloadNeighbors();
+  }
+
+  function showNextImage() {
+    if (currentGallery.length <= 1) return;
+    const nextIndex = (currentIndex + 1) % currentGallery.length;
+    showImageAtIndex(nextIndex);
+  }
+
+  function showPrevImage() {
+    if (currentGallery.length <= 1) return;
+    const prevIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+    showImageAtIndex(prevIndex);
+  }
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+    if (lightboxImg) lightboxImg.src = '';
+    currentGallery = [];
+    currentIndex = 0;
+  }
+
+  if (lightbox && lightboxImg) {
     document.addEventListener('click', (e) => {
       const trigger = e.target.closest('[data-img]');
       if (trigger) {
         e.preventDefault();
-        const imgSrc = trigger.getAttribute('data-img');
-        const caption = trigger.getAttribute('data-caption') || '';
-        lightboxImg.src = imgSrc;
-        lightboxCaption.innerText = caption;
+
+        // 1. Determine Gallery Group
+        const galleryAttr = trigger.getAttribute('data-gallery');
+        const stripParent = trigger.closest('.contest-photo-strip, [data-gallery-group]');
+
+        let rawItems = [];
+        if (galleryAttr) {
+          rawItems = Array.from(document.querySelectorAll(`[data-gallery="${galleryAttr}"][data-img]`));
+        } else if (stripParent) {
+          rawItems = Array.from(stripParent.querySelectorAll('[data-img]'));
+        } else {
+          rawItems = [trigger];
+        }
+
+        // Deduplicate by data-img src
+        const seenSrcs = new Set();
+        currentGallery = [];
+        rawItems.forEach(item => {
+          const src = item.getAttribute('data-img');
+          if (src && !seenSrcs.has(src)) {
+            seenSrcs.add(src);
+            currentGallery.push(item);
+          }
+        });
+
+        const targetSrc = trigger.getAttribute('data-img');
+        currentIndex = currentGallery.findIndex(item => item.getAttribute('data-img') === targetSrc);
+        if (currentIndex === -1) currentIndex = 0;
+
+        // Toggle nav controls visibility based on count
+        const isMulti = currentGallery.length > 1;
+        if (lightboxPrev) {
+          if (isMulti) lightboxPrev.classList.remove('hidden');
+          else lightboxPrev.classList.add('hidden');
+        }
+        if (lightboxNext) {
+          if (isMulti) lightboxNext.classList.remove('hidden');
+          else lightboxNext.classList.add('hidden');
+        }
+
+        renderDots();
+        showImageAtIndex(currentIndex);
+
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
       }
     });
 
-    function closeLightbox() {
-      lightbox.classList.remove('active');
-      document.body.style.overflow = '';
-      lightboxImg.src = '';
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightboxPrev) {
+      lightboxPrev.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showPrevImage();
+      });
+    }
+    if (lightboxNext) {
+      lightboxNext.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showNextImage();
+      });
     }
 
-    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
-
     lightbox.addEventListener('click', (e) => {
+      // Close only if clicking directly on the backdrop modal container
       if (e.target === lightbox) {
         closeLightbox();
       }
     });
 
+    // Keyboard Navigation: Escape, ArrowLeft, ArrowRight
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+      if (!lightbox.classList.contains('active')) return;
+
+      if (e.key === 'Escape') {
+        e.preventDefault();
         closeLightbox();
+      } else if (e.key === 'ArrowRight' || e.key === 'Right') {
+        e.preventDefault();
+        showNextImage();
+      } else if (e.key === 'ArrowLeft' || e.key === 'Left') {
+        e.preventDefault();
+        showPrevImage();
       }
     });
+
+    // Touch Swipe Gesture Support for Mobile
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    lightbox.addEventListener('touchstart', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      touchStartX = e.changedTouches[0].clientX;
+      touchStartY = e.changedTouches[0].clientY;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      const touchEndX = e.changedTouches[0].clientX;
+      const touchEndY = e.changedTouches[0].clientY;
+      const deltaX = touchEndX - touchStartX;
+      const deltaY = touchEndY - touchStartY;
+
+      if (Math.abs(deltaX) > 40 && Math.abs(deltaX) > Math.abs(deltaY) * 1.4) {
+        if (deltaX < 0) {
+          showNextImage(); // Swiped left -> Next
+        } else {
+          showPrevImage(); // Swiped right -> Previous
+        }
+      }
+    }, { passive: true });
   }
 
   // 6. Interactive Cursor Spotlight Tracker (Hover Effect)

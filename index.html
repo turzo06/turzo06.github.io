@@ -21,7 +21,7 @@
   <!-- Icons & Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
-  <link rel="stylesheet" href="assets/css/style.css?v=3.0" />
+  <link rel="stylesheet" href="assets/css/style.css?v=3.1" />
 </head>
 <body>
 
@@ -511,12 +511,12 @@
             <!-- Embedded Photo Strip -->
             <div class="contest-photo-strip-wrap">
               <div class="contest-strip-label"><i class="fa-solid fa-camera"></i> Onsite Contest Floor & Team Moments (Click to view)</div>
-              <div class="contest-photo-strip">
-                <img src="ICPC/with Coach Akif Mahdi Sir.jpg" alt="Team with Coach Akif Mahdi" class="contest-strip-thumb" data-img="ICPC/with Coach Akif Mahdi Sir.jpg" data-caption="PUST_Codo_Sapiens with Coach Akif Mahdi at ICPC Asia Dhaka Regional 2024" />
-                <img src="ICPC/Daffodil University Contest.jpg" alt="ICPC Contest Floor" class="contest-strip-thumb" data-img="ICPC/Daffodil University Contest.jpg" data-caption="Contest Arena Floor at Daffodil Smart City, ICPC Asia Dhaka Regional 2024" />
-                <img src="ICPC/photo_2026-10-03_21-26-06.jpg" alt="Contest Floor Portrait" class="contest-strip-thumb" data-img="ICPC/photo_2026-10-03_21-26-06.jpg" data-caption="Shubail Haque Turza at the ICPC Asia Dhaka Regional Contest Arena" />
-                <img src="ICPC/after contest.jpg" alt="Team Workstation" class="contest-strip-thumb" data-img="ICPC/after contest.jpg" data-caption="PUST_Codo_Sapiens at their official workstation booth after solving problems" />
-                <img src="ICPC/photo_2026-10-03_21-25-53.jpg" alt="ICPC Team Backdrop" class="contest-strip-thumb" data-img="ICPC/photo_2026-10-03_21-25-53.jpg" data-caption="PUST_Codo_Sapiens team members standing at the official ICPC 2024 backdrop" />
+              <div class="contest-photo-strip" data-gallery="icpc-moments">
+                <img src="ICPC/with Coach Akif Mahdi Sir.jpg" alt="Team with Coach Akif Mahdi" class="contest-strip-thumb" data-img="ICPC/with Coach Akif Mahdi Sir.jpg" data-caption="PUST_Codo_Sapiens with Coach Akif Mahdi at ICPC Asia Dhaka Regional 2024" data-gallery="icpc-moments" />
+                <img src="ICPC/Daffodil University Contest.jpg" alt="ICPC Contest Floor" class="contest-strip-thumb" data-img="ICPC/Daffodil University Contest.jpg" data-caption="Contest Arena Floor at Daffodil Smart City, ICPC Asia Dhaka Regional 2024" data-gallery="icpc-moments" />
+                <img src="ICPC/photo_2026-10-03_21-26-06.jpg" alt="Contest Floor Portrait" class="contest-strip-thumb" data-img="ICPC/photo_2026-10-03_21-26-06.jpg" data-caption="Shubail Haque Turza at the ICPC Asia Dhaka Regional Contest Arena" data-gallery="icpc-moments" />
+                <img src="ICPC/after contest.jpg" alt="Team Workstation" class="contest-strip-thumb" data-img="ICPC/after contest.jpg" data-caption="PUST_Codo_Sapiens at their official workstation booth after solving problems" data-gallery="icpc-moments" />
+                <img src="ICPC/photo_2026-10-03_21-25-53.jpg" alt="ICPC Team Backdrop" class="contest-strip-thumb" data-img="ICPC/photo_2026-10-03_21-25-53.jpg" data-caption="PUST_Codo_Sapiens team members standing at the official ICPC 2024 backdrop" data-gallery="icpc-moments" />
               </div>
             </div>
           </div>
@@ -558,10 +558,10 @@
             <!-- Embedded Photo Strip -->
             <div class="contest-photo-strip-wrap">
               <div class="contest-strip-label"><i class="fa-solid fa-camera"></i> Contest Lab Session & Team Moments (Click to view)</div>
-              <div class="contest-photo-strip">
-                <img src="Solver Green Contest/photo_2026-10-03_21-47-18.jpg" alt="Solver Green Contest Lab" class="contest-strip-thumb" data-img="Solver Green Contest/photo_2026-10-03_21-47-18.jpg" data-caption="Team selfie in the lab during the Solver Green Intra-University Contest" />
-                <img src="Solver Green Contest/photo_2026-10-03_21-47-18 (2).jpg" alt="Contest Workstation" class="contest-strip-thumb" data-img="Solver Green Contest/photo_2026-10-03_21-47-18 (2).jpg" data-caption="Contest lab workstation during the Solver Green IUPC" />
-                <img src="Solver Green Contest/photo_2026-10-03_21-47-18 (3).jpg" alt="Award Session" class="contest-strip-thumb" data-img="Solver Green Contest/photo_2026-10-03_21-47-18 (3).jpg" data-caption="Contest session and award moment at Solver Green IUPC" />
+              <div class="contest-photo-strip" data-gallery="solver-green-moments">
+                <img src="Solver Green Contest/photo_2026-10-03_21-47-18.jpg" alt="Solver Green Contest Lab" class="contest-strip-thumb" data-img="Solver Green Contest/photo_2026-10-03_21-47-18.jpg" data-caption="Team selfie in the lab during the Solver Green Intra-University Contest" data-gallery="solver-green-moments" />
+                <img src="Solver Green Contest/photo_2026-10-03_21-47-18 (2).jpg" alt="Contest Workstation" class="contest-strip-thumb" data-img="Solver Green Contest/photo_2026-10-03_21-47-18 (2).jpg" data-caption="Contest lab workstation during the Solver Green IUPC" data-gallery="solver-green-moments" />
+                <img src="Solver Green Contest/photo_2026-10-03_21-47-18 (3).jpg" alt="Award Session" class="contest-strip-thumb" data-img="Solver Green Contest/photo_2026-10-03_21-47-18 (3).jpg" data-caption="Contest session and award moment at Solver Green IUPC" data-gallery="solver-green-moments" />
               </div>
             </div>
           </div>
@@ -1063,15 +1063,30 @@
     </div>
   </div>
 
-  <!-- Image Lightbox Modal -->
-  <div class="lightbox-modal" id="lightbox-modal">
+  <!-- Image Lightbox Modal with Gallery Navigation -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Image Preview">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close modal">&times;</button>
+    
+    <button class="lightbox-nav-btn lightbox-prev" id="lightbox-prev" aria-label="Previous photo">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
     <div class="lightbox-content">
-      <button class="lightbox-close" id="lightbox-close" aria-label="Close modal">&times;</button>
-      <img src="" alt="Enlarged view" class="lightbox-img" id="lightbox-img" />
-      <div class="lightbox-caption" id="lightbox-caption"></div>
+      <div class="lightbox-img-wrapper">
+        <img src="" alt="Enlarged view" class="lightbox-img" id="lightbox-img" />
+      </div>
+      <div class="lightbox-footer">
+        <span class="lightbox-counter" id="lightbox-counter"></span>
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+        <div class="lightbox-dots" id="lightbox-dots"></div>
+      </div>
     </div>
+
+    <button class="lightbox-nav-btn lightbox-next" id="lightbox-next" aria-label="Next photo">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
   </div>
 
-  <script src="assets/js/script.js?v=2.6"></script>
+  <script src="assets/js/script.js?v=3.0"></script>
 </body>
 </html>
